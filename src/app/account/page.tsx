@@ -16,7 +16,7 @@ export default async function AccountPage() {
   const session = await auth();
   if (!session) redirect("/login");
 
-  const [user] = await db.select().from(users).where(eq(users.id, session.user.id!)).limit(1);
+  const [user] = await db.select().from(users).where(eq(users.id, session.user.id)).limit(1);
 
   return (
     <AppShell>

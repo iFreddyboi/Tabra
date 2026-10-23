@@ -9,7 +9,7 @@ export async function DELETE() {
   const session = await requireAuth();
   if (!session) return unauthorized();
 
-  const userId = session.user.id!;
+  const userId = session.user.id;
 
   // Nullify group memberships (keeps group history intact for other members)
   // rather than cascade-deleting expenses they paid for.

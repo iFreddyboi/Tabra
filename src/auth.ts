@@ -3,7 +3,7 @@ import Google from "next-auth/providers/google";
 import Resend from "next-auth/providers/resend";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "@/db";
-import { accounts, sessions, users, verificationTokens } from "@/db/schema";
+import { accounts, users, verificationTokens } from "@/db/schema";
 
 const providers = [
   Google({
@@ -19,8 +19,8 @@ const providers = [
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db, {
     usersTable: users,
+    // @ts-expect-error drizzle-orm 0.36 / @auth/drizzle-adapter type mismatch; works at runtime
     accountsTable: accounts,
-    sessionsTable: sessions,
     verificationTokensTable: verificationTokens,
   }),
   providers,
