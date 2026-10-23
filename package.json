@@ -1,0 +1,53 @@
+{
+  "name": "tabra",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:migrate": "drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "@auth/drizzle-adapter": "^1.4.2",
+    "@neondatabase/serverless": "^0.10.0",
+    "@sentry/nextjs": "^8.30.0",
+    "@stripe/stripe-js": "^4.4.0",
+    "@vercel/blob": "^0.24.1",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.36.4",
+    "drizzle-zod": "^0.5.1",
+    "next": "14.2.5",
+    "next-auth": "^5.0.0-beta.19",
+    "pg": "^8.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "resend": "^4.0.0",
+    "stripe": "^16.9.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.31.11",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5"
+  },
+  "allowScripts": {
+    "esbuild@0.18.20": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "@sentry/cli@2.39.1": true,
+    "esbuild@0.25.12": true
+  }
+}
